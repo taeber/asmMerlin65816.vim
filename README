@@ -1,3 +1,19 @@
-This is a mirror of http://www.vim.org/scripts/script.php?script_id=1314
+This is a fork of https://github.com/vim-scripts/asmM6502.vim
+... which itself is simply a mirror of this original (circa 2005?) vim script:
+        http://www.vim.org/scripts/script.php?script_id=1314
 
-Syntax for the 6502, included &#039Sally&#039 (Atari8) ops
+This fork is intended to add support for 65816 opcodes and support for Merlin 8/16 pseudo-ops (AppleIIgs compiler).
+
+
+Install:
+
+ - make a link to (or copy) the file to your vim syntax dir
+   ln syntax/asmMerlin65816.vim ~/.vim/syntax/asm65816.vim 
+ - add the filetype(s) association you want to your ~/.vimrc file, e.g. -
+   au BufNewFile,BufRead *.asm set filetype=asm65816
+   au BufNewFile,BufRead *.s set filetype=asm65816
+
+
+Tip:
+  I use a special preformatter to convert my code to use appropriate tabbing and then I add the ftplugin to have my preferred tab width.  I also have my Merlin editor set to use larger than default tabs.  (This involves editing PARMS.S on you Merlin disk.) It makes it a lot easier to deal with larger labels and large point of using vim to edit 65xx asm is that you have a larger screen.  The tab file is in the ftplugin/ directory and you just install it as ~/.vim/ftplugin/asm65816.vim
+
