@@ -19,8 +19,8 @@ syn keyword asm65c02Op phx plx phy ply stz trb tsb
 syn keyword asm65816Op cop mvn mvp pea pei per phb phd phk plb pld rep rtl sep stp tcd tcs tdc tsc txy tyx wai wdm xba xbc
 
 syn keyword asm65Branch bcc bcs beq bmi bne bpl bvc bvs jmp jsr
-" blt/bge are really a merlin equivalents... maybe hange to its own thing, but it's fine here for now
-syn keyword asm65c02Branch bra blt bge
+" blt/bge/etc are really a merlin equivalents... maybe hange to its own thing, but it's fine here for now
+syn keyword asm65c02Branch bra blt bge tda tad swa tsa tas
 syn keyword asm65816Branch brl 
 
 " Atari 800XL 'Sally' undocumented opcodes
@@ -30,7 +30,7 @@ syn keyword asmSallyUndoc anc arr asr asx ax7 axe brk dcp jam las lax php rla rr
 
 " Merlin 8/16 pseudo ops and commands
 syn keyword asmMerlinPseudoOps mac eom pmc <<< >>> 
-syn keyword asmMerlinSettings xc typ lst equz equ dw asc ds db dfb sav
+syn keyword asmMerlinSettings xc typ lst equz equ dw asc ds db da dw ddb dfb adr adrl hex str rev fls inv dci tr skp ttl pag lstdo dat cyc ast dum dend dsk var use obj rel exp dfb sav do fin kbd err chk if else ent ext
 
 syn match asmLabel		"^[a-z_][a-z0-9_]*"
 syn match asmComment		";.*$" contains=asmTodo
