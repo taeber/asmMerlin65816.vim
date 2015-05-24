@@ -16,20 +16,23 @@ syn keyword asm65Reg x y a
 
 syn keyword asm65Op  adc and asl bit brk clc cld cli clv cmp cpx cpy dec dex dey eor inc inx iny  lda ldx ldy lsr nop ora pha php pla plp rol ror rti rts sbc sec sed sei sta stx sty tax tay tsx txa txs tya 
 syn keyword asm65c02Op phx plx phy ply stz trb tsb 
-syn keyword asm65816Op cop mvn mvp pea pei per phb phd phk plb pld rep rtl sep stp tcd tcs tdc tsc txy tyx wai wdm xba xbc
+syn keyword asm65816Op cop mvn mvp pea pei per phb phd phk plb pld rep rtl sep stp tcd tcs tdc tsc txy tyx wai wdm xba xbc ldal stal 
 
 syn keyword asm65Branch bcc bcs beq bmi bne bpl bvc bvs jmp jsr
-" blt/bge/etc are really a merlin equivalents... maybe hange to its own thing, but it's fine here for now
+" blt/bge/etc are really a merlin equivalents... maybe change to its own thing, but it's fine here for now
 syn keyword asm65c02Branch bra blt bge tda tad swa tsa tas
 syn keyword asm65816Branch brl 
 
 " Atari 800XL 'Sally' undocumented opcodes
 " mnemonics taken from Trevin Beattie's 'Atari Technical Information' page
 " at "http://www.xmission.com/~trevin/atari/atari.shtml"
-syn keyword asmSallyUndoc anc arr asr asx ax7 axe brk dcp jam las lax php rla rra sax slo sre sx7 sy7 xea xs7
+syn keyword asmSallyUndoc anc arr asr asx ax7 axe brk dcp jam las lax rla rra sax slo sre sx7 sy7 xea xs7
+" IF YOU ARE DOING ATARI, UNCOMMENT THIS.  IT IS COMMENTED OUT SO THAT IT
+" DOESN'T CONFLICT WITH THE 65816 RULES ABOVE.
+"syn keyword asmSallyUndoc php
 
 " Merlin 8/16 pseudo ops and commands
-syn keyword asmMerlinPseudoOps mac eom pmc <<< >>> 
+syn keyword asmMerlinPseudoOps mx mac eom pmc <<< >>> 
 syn keyword asmMerlinSettings xc typ lst equz equ dw asc ds db da dw ddb dfb adr adrl hex str rev fls inv dci tr skp ttl pag lstdo dat cyc ast dum dend dsk var use obj rel exp dfb sav do fin kbd err chk if else ent ext
 
 syn match asmLabel		"^[a-z_][a-z0-9_]*"
@@ -85,6 +88,7 @@ if !exists("did_asm65_syntax_inits")
   hi link binNumber	Number
   hi link decNumber	Number
 
+  hi asmLabel ctermfg=lightcyan
   " My default color overrides:
 "  hi asmSpecialComment ctermfg=red
 "  hi asmIdentifier ctermfg=lightcyan
