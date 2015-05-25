@@ -16,7 +16,7 @@ syn keyword asm65Reg x y a
 
 syn keyword asm65Op  adc and asl bit brk clc cld cli clv cmp cpx cpy dec dex dey eor inc inx iny  lda ldx ldy lsr nop ora pha php pla plp rol ror rti rts sbc sec sed sei sta stx sty tax tay tsx txa txs tya 
 syn keyword asm65c02Op phx plx phy ply stz trb tsb 
-syn keyword asm65816Op cop mvn mvp pea pei per phb phd phk plb pld rep rtl sep stp tcd tcs tdc tsc txy tyx wai wdm xba xbc ldal stal jmpl
+syn keyword asm65816Op cop mvn mvp pea pei per phb phd phk plb pld rep rtl sep stp tcd tcs tdc tsc txy tyx wai wdm xba xbc ldal stal jmpl cmpl
 
 syn keyword asm65Branch bcc bcs beq bmi bne bpl bvc bvs jmp jsr
 " blt/bge/etc are really a merlin equivalents... maybe change to its own thing, but it's fine here for now
