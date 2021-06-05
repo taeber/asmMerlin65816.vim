@@ -38,7 +38,7 @@ syn keyword asmMerlinSettings xc typ lst equz equ dw asc ds db da dw ddb dfb adr
 syn match asmLabel		"^[a-z_][a-z0-9_]*"
 syn match asmComment		";.*$" contains=asmTodo
 syn match asmComment		"^\*.*$" contains=asmTodo
-syn match asmMerlinLocal ":[a-z_][a-z0-9_]*"
+syn match asmMerlinLocal "[.:][a-z_][a-z0-9_]*"
 syn match asmMerlinVariable "][a-z_][a-z0-9_]*"
 syn keyword asmTodo	contained todo fixme xxx warning danger note notice bug author date
 syn region asmString		start=+"+ skip=+\\"+ end=+"+
@@ -88,7 +88,12 @@ if !exists("did_asm65_syntax_inits")
   hi link binNumber	Number
   hi link decNumber	Number
 
-  hi asmLabel ctermfg=lightcyan
+""" taeber customization
+"  hi asmLabel ctermfg=lightcyan
+  hi asmLabel ctermfg=cyan
+  hi asmMerlinLocal ctermfg=darkcyan
+  hi asmComment ctermfg=darkgray
+"""
   " My default color overrides:
 "  hi asmSpecialComment ctermfg=red
 "  hi asmIdentifier ctermfg=lightcyan
